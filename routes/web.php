@@ -3,6 +3,18 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/users', function () {
+    return view('users');
+});
+
+Route::get('/posts', function() {   
+    return view('posts');
+});
+
+Route::get('/categories', function() {
+    return view('categories');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
