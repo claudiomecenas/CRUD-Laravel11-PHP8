@@ -1,23 +1,25 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Blog\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Blog\PostController;
+use App\Http\Controllers\Admin\UserController;
 
-Route::get('/users', function () {
-    return view('users');
-});
 
-Route::get('/posts', function() {   
-    return view('posts');
-});
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
-Route::get('/categories', function() {
-    return view('categories');
-});
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+
+// Route::get('/categories', function() {
+//     return view('categories');
+// });
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
