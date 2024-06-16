@@ -13,9 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //dd('users');
-        $users = User::all();
-        //return $user;
+        $users = User::paginate();
         return view('admin.users', compact('users'));
     }
 
@@ -24,7 +22,6 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
