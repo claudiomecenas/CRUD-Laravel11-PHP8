@@ -42,7 +42,7 @@
                     placeholder="Senha"> --}}
 
             </div>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded">Cadastrar</button>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded">Atualizar</button>
         </form>
     </div>
 
