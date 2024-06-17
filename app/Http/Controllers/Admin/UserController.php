@@ -38,7 +38,7 @@ class UserController extends Controller
         // $user->password = $request->password;
         // $user->save();
 
-        User::create($request->validate());
+        User::create($request->validated());
         return redirect()
             ->route('users.index')
             ->with('success', 'Usuário criado com sucesso!');
