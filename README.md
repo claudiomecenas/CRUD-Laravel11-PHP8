@@ -1,16 +1,16 @@
 
 
-- Setup Docker com mysql e phpmyadmin
-- Timezone ajustado para o Brasil
-- Adicionado extensões PHP exigidas pelo Filament
+- Basic CRUD in Laravel 11 and Breeze
+- Three tables: User, Category and Post
+- Under Development
 
-### Passo a passo
+### Como instalar:
 Clone Repositório
 ```sh
-git clone -b main https://github.com/claudiomecenas/setup-docker-laravel-11-BR.git app-laravel
+git clone -b main https://github.com/claudiomecenas/CRUD-Laravel11-PHP8.git crud-laravel
 ```
 ```sh
-cd app-laravel
+cd crud-laravel
 ```
 
 Crie o Arquivo .env
