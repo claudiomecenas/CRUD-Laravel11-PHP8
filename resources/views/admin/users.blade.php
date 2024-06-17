@@ -17,7 +17,7 @@
     <h1 class="text-3xl font-bold mt-8 text-center">Listagem de Usuários</h1>
 
     <div class="flex justify-end max-w-7xl mx-auto mt-20">
-      <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded">Novo</a>
+      <a href="{{ route('users.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded">Novo</a>
     </div>
 
     <div class="max-w-7xl mx-auto flex flex-col mt-4 mb-20">  

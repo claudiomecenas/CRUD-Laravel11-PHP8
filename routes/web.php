@@ -7,19 +7,19 @@ use App\Http\Controllers\Blog\PostController;
 use App\Http\Controllers\Admin\UserController;
 
 
+
+Route::post('/users', [UserController::class, 'store'])->name('users.store');
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
-
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
-// Route::get('/categories', function() {
-//     return view('categories');
-// });
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
