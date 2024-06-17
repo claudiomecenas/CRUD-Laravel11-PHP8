@@ -11,11 +11,10 @@
         </div>
 
         <div class="max-w-7xl mx-auto flex flex-col mt-4 mb-20">
-                @if (session()->has('success'))
-                    <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
-                        {{ session('success') }}
-                    </div>
-                @endif
+
+                {{-- Componente de alerta --}}
+                <x-alert/>
+
                 <table class="table-auto">
                     <thead class="text-left bg-gray-300">
                         <tr>
