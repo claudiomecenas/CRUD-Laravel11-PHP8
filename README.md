@@ -1,8 +1,7 @@
 
-
 - Basic CRUD in Laravel 11 and Breeze
 - Three tables: User, Category and Post
-- Under Development
+- Under Development by Cláudio Mecenas
 
 ### Como instalar:
 Clone Repositório
