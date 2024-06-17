@@ -1,3 +1,21 @@
+@if (session()->has('success'))
+    <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if (session()->has('message'))
+    <div class="bg-yellow-500 text-white font-bold rounded-t px-4 py-2">
+        {{ session('message') }}
+    </div>
+@endif
+
+@if (session()->has('error'))
+    <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+        {{ session('error') }}
+    </div>
+@endif
+
 @if ($errors->any())
             <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
                 Ocorreu um erro
@@ -9,10 +27,4 @@
                     </li>
                 @endforeach
             </ul>
-@endif
-
-@if (session()->has('success'))
-    <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
-        {{ session('success') }}
-    </div>
 @endif

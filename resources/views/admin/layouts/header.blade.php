@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') - CRUD</title>
     <!-- Scripts -->
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 </head>
 
 <header class="py-8 text-center text-sm text-black dark:text-white/70">
