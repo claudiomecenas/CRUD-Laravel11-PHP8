@@ -32,7 +32,7 @@ class StoreUserRequest extends FormRequest
                 'required',
                 'email',
                 'max:255',
-                // 'unique:users,email'
+                // regra para poder passar pela edição
                 Rule::unique('users', 'email')->ignore($this->user, 'id')
                 
             ],

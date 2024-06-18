@@ -23,6 +23,7 @@ class UpdateUserRequest extends StoreUserRequest
     {
         $rules = parent::rules();
 
+        //regra para poder passar pela edição
         $rules['password'] = ['nullable', 'string', 'min:8', 'max:12'];
 
         return $rules;

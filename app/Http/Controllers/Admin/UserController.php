@@ -38,6 +38,7 @@ class UserController extends Controller
         // $user->password = $request->password;
         // $user->save();
 
+        //usar validated para garantir uma maior seguranca pq ele pega apenas valores validados
         User::create($request->validated());
         return redirect()
             ->route('users.index')
@@ -71,10 +72,14 @@ class UserController extends Controller
         if (!$user = User::find($id)) {
             return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
         }
-        $user->update($request->only([
-            'name',
-            'email',
-        ]));
+
+        $data = $request->only(['name', 'email']); //pega apenas os campos que foram informados no request e ignora os outros();
+        if ($request->password) {
+            $data['password'] = bcrypt($request->password);
+        }
+
+        $user->update($data);
+
         return redirect()
             ->route('users.index')
             ->with('success', 'Usuário atualizado com sucesso!');
