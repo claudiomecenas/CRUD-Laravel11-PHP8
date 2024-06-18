@@ -7,14 +7,16 @@ use App\Http\Controllers\Blog\PostController;
 use App\Http\Controllers\Admin\UserController;
 
 
-Route::middleware('auth')->group(function () {
-    Route::delete('/users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy');
-    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-    Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
-    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-    Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
-    Route::post('/users', [UserController::class, 'store'])->name('users.store');
-    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::middleware('auth')
+    ->prefix('admin')
+    ->group(function () {
+        Route::delete('/users/{user}/destroy', [UserController::class, 'destroy'])->name('users.destroy');
+        Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+        Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
+        Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+        Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+        Route::post('/users', [UserController::class, 'store'])->name('users.store');
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
 });
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
