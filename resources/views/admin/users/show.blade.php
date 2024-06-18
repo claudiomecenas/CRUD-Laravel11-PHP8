@@ -5,7 +5,6 @@
 @section('content')
 
 <h1 class="text-3xl font-bold mt-8 text-center">Detalhes do Usuário {{ $user->id }}</h1>
-
 <div class="max-w-7xl mx-auto flex flex-col mt-20 mb-5">
 
     <ul>
@@ -13,10 +12,13 @@
         <li><span class="font-bold">Name:</span> {{ $user->name }}</li>
         <li><span class="font-bold">Email:</span> {{ $user->email }}</li>
     </ul>
+    
+    <x-alert/>
 
 </div>
 
 <div class="flex max-w-7xl mx-auto mb-20">
+    
     <form action="{{ route('users.destroy', $user->id) }}" method="POST">
         @csrf
         @method('DELETE')

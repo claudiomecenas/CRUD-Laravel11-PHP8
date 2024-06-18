@@ -99,9 +99,10 @@ class UserController extends Controller
 
         //verifica se o usuario logado e o que vai ser deletado sao o mesmos
         if (auth()->user()->id == $user->id) {
-            return redirect()
-                ->route('users.index')
-                ->with('error', 'Você não pode deletar o seu próprio perfil!');
+            return back()->with('error', 'Você não pode deletar o seu próprio perfil!');
+            // return redirect()
+            //     ->route('users.index')
+            //     ->with('error', 'Você não pode deletar o seu próprio perfil!');
         }
 
         $user->delete();
