@@ -33,6 +33,7 @@
                                 <td class="px-4 py-2 mb-2 text-center">
                                     {{-- {{ route('admin.users.edit', $user->id) }}
                                     {{ route('admin.users.destroy', $user->id) }} --}}
+                                    <a href="{{ route('users.show', $user->id) }}" class="bg-blue-300 hover:bg-blue-500 text-white text-sm font-bold py-2 px-4 rounded">ver</a>
                                     <a href="{{ route('users.edit', $user->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded">...</a>
                                     <a href="#" class="bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded">X</a>
                                 </td>
