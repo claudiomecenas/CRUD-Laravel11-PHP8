@@ -16,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::paginate();
-        return view('admin.users', compact('users'));
+        return view('admin.users.users', compact('users'));
     }
 
     /**
@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        return view('admin.users.create');
     }
 
     /**
@@ -61,7 +61,7 @@ class UserController extends Controller
         if (!$user = User::find($id)) {
             return redirect()->route('users.index')->with('message', 'Usuário não encontrado');
         }
-        return view('admin.edit', compact('user'));
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
