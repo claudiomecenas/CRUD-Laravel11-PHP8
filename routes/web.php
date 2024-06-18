@@ -17,10 +17,13 @@ Route::middleware('auth')
         Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
         Route::post('/users', [UserController::class, 'store'])->name('users.store');
         Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+        Route::resource('posts', PostController::class);
+        Route::resource('categories', CategoryController::class);
 });
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+// Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+// Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
 Route::get('/', function () {
     return view('welcome');
