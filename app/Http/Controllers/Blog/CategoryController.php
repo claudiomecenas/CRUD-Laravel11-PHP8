@@ -49,7 +49,17 @@ class CategoryController extends Controller
   
     public function update(Request $request, string $id)
     {
-        dd('categories/update');
+        if (!$category = Category::find($id)) {
+            return redirect()->route('categories.index')->with('message', 'Categoria não encontrada');
+        }
+
+        $data = $request->all();
+
+        $category->update($data);
+
+        return redirect()
+            ->route('categories.index')
+            ->with('success', 'Categoria atualizada com sucesso!');
     }
 
  
