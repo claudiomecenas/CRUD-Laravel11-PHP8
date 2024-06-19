@@ -34,7 +34,10 @@ class CategoryController extends Controller
 
     public function show(string $id)
     {
-        dd('categories/show');
+        if (!$category = Category::find($id)) {
+            return redirect()->route('categories.index')->with('message', 'Categoria não encontrado');
+        }
+        return view('admin.categories.show', compact('category'));
     }
 
   
