@@ -68,6 +68,13 @@ class CategoryController extends Controller
  
     public function destroy(string $id)
     {
-        dd('categories/destroy');
+        if (!$category = Category::find($id)) {
+            return redirect()->route('categories.index')->with('message', 'Categoria não encontrada');
+        }
+
+        $category->delete();
+        return redirect()
+            ->route('categories.index')
+            ->with('success', 'Categoria deletada com sucesso!');
     }
 }
