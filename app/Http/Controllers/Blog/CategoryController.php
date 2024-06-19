@@ -40,8 +40,11 @@ class CategoryController extends Controller
   
     public function edit(string $id)
     {
-        dd('categories/edit');
-    }
+        if (!$category = Category::find($id)) {
+            return redirect()->route('categories.index')->with('message', 'Categoria não encontrado');
+        }
+        return view('admin.categories.edit', compact('category'));
+}
 
   
     public function update(Request $request, string $id)
