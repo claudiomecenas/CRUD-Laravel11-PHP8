@@ -11,7 +11,7 @@
         placeholder="Nome"
         value="{{ $category->name ?? old('name') }}">
     
-    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="slug">
       Slug
     </label>
     <input class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -21,7 +21,7 @@
         placeholder="Slug"
         value="{{ $category->slug ?? old('slug') }}">
     
-    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
       Descrição
     </label>
     <input class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -31,7 +31,7 @@
         placeholder="Descrição"
         value="{{ $category->description ?? old('description') }}">
     
-    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="status">
       Status
     </label>
     {{-- <input class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"

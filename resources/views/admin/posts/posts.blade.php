@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>View User</title>
+    <title>Listagem de Posts</title>
 
     <!-- Scripts -->
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
@@ -17,7 +17,7 @@
     <h1 class="text-3xl font-bold mt-8 text-center">Listagem de Posts</h1>
 
     <div class="flex justify-end max-w-7xl mx-auto mt-20">
-      <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded">Novo</a>
+      <a href="{{ route('posts.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded">Novo</a>
     </div>
 
     <div class="max-w-7xl mx-auto flex flex-col mt-4 mb-20">  
@@ -25,17 +25,23 @@
           <thead class="text-left bg-gray-300">
               <tr>
                   <th class="px-4 py-2">Id</th>
-                  <th class="px-4 py-2">Name</th>
-                  <th class="px-4 py-2">Email</th>
+                  <th class="px-4 py-2">Título</th>
+                  <th class="px-4 py-2">Slug</th>
+                  <th class="px-4 py-2">Conteúdo</th>
+                  <th class="px-4 py-2">Autor</th>
+                  <th class="px-4 py-2">Categoria</th>
                   <th class="px-4 py-2 text-center">Ações</th>
               </tr>
           </thead>
           <tbody>
               @forelse ($posts as $post)
                   <tr class="border-b bg-gray-100">
-                      <td class="px-4 py-2">{{ $user->id }}</td>
-                      <td class="px-4 py-2">{{ $user->name }}</td>
-                      <td class="px-4 py-2">{{ $user->email }}</td>
+                      <td class="px-4 py-2">{{ $post->id }}</td>
+                      <td class="px-4 py-2">{{ $post->title }}</td>
+                      <td class="px-4 py-2">{{ $post->slug }}</td>
+                      <td class="px-4 py-2">{{ $post->body }}</td>
+                      <td class="px-4 py-2">{{ $post->user->name }}</td>
+                      <td class="px-4 py-2">{{ $post->category->name }}</td>
                       <td class="px-4 py-2 mb-2 text-center">
                           {{-- {{ route('admin.users.edit', $user->id) }}
                           {{ route('admin.users.destroy', $user->id) }} --}}

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Blog;
 
 use App\Models\Post;
+use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePostRequest;
 
 class PostController extends Controller
 {
@@ -22,15 +25,20 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $user = auth()->user();
+        $categories = Category::where('status', 1)->get();
+        return view('admin.posts.create', compact('user', 'categories'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        //
+        Post::create($request->validated());
+        return redirect()
+            ->route('posts.index')
+            ->with('success', 'Post criado com sucesso!');
     }
 
     /**
@@ -38,7 +46,7 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('admin.posts.show');
     }
 
     /**
@@ -46,7 +54,7 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.posts.edit');
     }
 
     /**
@@ -54,7 +62,7 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        dd($request->all());
     }
 
     /**
@@ -62,6 +70,6 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        dd($id);
     }
 }
