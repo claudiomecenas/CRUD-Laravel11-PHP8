@@ -43,11 +43,9 @@
                       <td class="px-4 py-2">{{ $post->user->name }}</td>
                       <td class="px-4 py-2">{{ $post->category->name }}</td>
                       <td class="px-4 py-2 mb-2 text-center">
-                          {{-- {{ route('admin.users.edit', $user->id) }}
-                          {{ route('admin.users.destroy', $user->id) }} --}}
-                          <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded">...</a>
-                          <a href="#" class="bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded">X</a>
-                      </td>
+                        <a href="{{ route('posts.show', $post->id) }}" class="bg-blue-300 hover:bg-blue-500 text-white text-sm font-bold py-2 px-4 rounded">Detalhes</a>
+                        <a href="{{ route('posts.edit', $post->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded">Editar</a>
+                    </td>
                   </tr>
               @empty
                   <tr>
