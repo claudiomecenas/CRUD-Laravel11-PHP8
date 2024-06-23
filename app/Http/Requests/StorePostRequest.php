@@ -28,5 +28,6 @@ class StorePostRequest extends FormRequest
             'category_id' => ['required', 'exists:categories,id'],
             'user_id' => ['required', 'exists:users,id'],
             'image' => ['nullable', 'image'],
+        ];
     }
 }
