@@ -22,9 +22,6 @@ Route::middleware('auth')
         Route::resource('categories', CategoryController::class);
 });
 
-// Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-// Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-
 Route::get('/', function () {
     return view('welcome');
 });
