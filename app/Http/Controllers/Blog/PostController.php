@@ -39,7 +39,13 @@ class PostController extends Controller
 
     public function show(string $id)
     {
-        return view('admin.posts.show');
+        if (!$post = Post::find($id)) {
+            return redirect()->route('posts.index')->with('message', 'Post não encontrado');
+        }
+
+        $user = auth()->user();
+        $categories = Category::where('status', 1)->get();
+        return view('admin.posts.show', compact('post', 'user', 'categories'));
     }
 
   
