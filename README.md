@@ -1,4 +1,6 @@
 
+[![Print ex](https://penseon.com.br/github/CRUD-Laravel11-PHP8/crud.png)](https://penseon.com.br/github/CRUD-Laravel11-PHP8/crud.png)  
+
 - Basic CRUD in Laravel 11 and Breeze
 - Three tables: User, Category and Post
 - by Cláudio Mecenas
