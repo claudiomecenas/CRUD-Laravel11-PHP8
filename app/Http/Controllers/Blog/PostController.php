@@ -68,6 +68,13 @@ class PostController extends Controller
   
     public function destroy(string $id)
     {
-        dd($id);
+        if (!$post = Post::find($id)) {
+            return redirect()->route('posts.index')->with('message', 'Post não encontrado');
+        }
+
+        $post->delete();
+        return redirect()
+            ->route('posts.index')
+            ->with('success', 'Post deletado com sucesso!');
     }
 }

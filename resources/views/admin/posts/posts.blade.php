@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Listagem de Posts</title>
+@extends('admin.layouts.app')
 
-    <!-- Scripts -->
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <script src="https://cdn.tailwindcss.com"></script>
+@section('title', 'Listagem de Categorias')
 
-
-</head>
-<body class="font-sans antialiased dark:bg-black dark:text-white/50 py-4 px-4 bg-gray-50">
+@section('content')
 
     <h1 class="text-3xl font-bold mt-8 text-center">Listagem de Posts</h1>
 
@@ -20,7 +10,11 @@
       <a href="{{ route('posts.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded">Novo</a>
     </div>
 
-    <div class="max-w-7xl mx-auto flex flex-col mt-4 mb-20">  
+    <div class="max-w-7xl mx-auto flex flex-col mt-4 mb-20">
+
+      {{-- Componente de alerta --}}
+      <x-alert/>
+
       <table class="table-auto">
           <thead class="text-left bg-gray-300">
               <tr>
@@ -56,5 +50,4 @@
       </table>
     </div>
 
-</body>
-</html>
+@endsection
